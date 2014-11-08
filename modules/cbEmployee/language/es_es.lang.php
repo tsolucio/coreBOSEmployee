@@ -9,6 +9,9 @@
  ************************************************************************************/
 
 $mod_strings = Array(
+	'ModuleName' => 'Module Name',
+	'SINGLE_ModuleName' => 'Module Name',
+	'ModuleName ID' => 'Module Name ID',
 	'Employees' => 'Empleados',
 
 	'LBL_CUSTOM_INFORMATION' => 'Información Personalizada',

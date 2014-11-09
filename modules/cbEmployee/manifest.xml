@@ -41,7 +41,7 @@
   `birthplace` varchar(100) default NULL,
   `birthdate` date default NULL,
   `maritalstatus` varchar(100) default NULL,
-  `children` int(11) default NULL,
+  `numchildren` int(11) default NULL,
   `inchargeof` int(11) default NULL,
   `userid` int(11) default NULL,
   `age` int(11) default NULL,
@@ -242,12 +242,12 @@
 <masseditable>1</masseditable>
 </field>
 <field>
-<fieldname>children</fieldname>
+<fieldname>numchildren</fieldname>
 <uitype>7</uitype>
-<columnname>children</columnname>
+<columnname>numchildren</columnname>
 <tablename>vtiger_cbemployee</tablename>
 <generatedtype>1</generatedtype>
-<fieldlabel>children</fieldlabel>
+<fieldlabel>numchildren</fieldlabel>
 <readonly>1</readonly>
 <presence>2</presence>
 <selected>0</selected>

@@ -458,6 +458,11 @@ class cbEmployee extends CRMEntity {
 			// TODO Handle actions before this module is updated.
 		} else if($event_type == 'module.postupdate') {
 			// TODO Handle actions after this module is updated.
+			global $adb;
+			$adb->query("update vtiger_field set typeofdata='E~O' where fieldid in (813,815)");
+			$module = Vtiger_Module::getInstance($modulename);
+			$moddoc = Vtiger_Module::getInstance('Documents');
+			$module->setRelatedList($moddoc, 'Documents', Array('ADD','SELECT'),'get_attachments'); // get_dependents_list
 		}
 	}
 

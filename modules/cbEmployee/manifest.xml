@@ -683,7 +683,7 @@
 <selected>0</selected>
 <sequence>8</sequence>
 <maximumlength>100</maximumlength>
-<typeofdata>V~O</typeofdata>
+<typeofdata>E~O</typeofdata>
 <quickcreate>1</quickcreate>
 <quickcreatesequence/>
 <displaytype>1</displaytype>
@@ -723,7 +723,7 @@
 <selected>0</selected>
 <sequence>5</sequence>
 <maximumlength>100</maximumlength>
-<typeofdata>V~O</typeofdata>
+<typeofdata>E~O</typeofdata>
 <quickcreate>0</quickcreate>
 <quickcreatesequence>7</quickcreatesequence>
 <displaytype>1</displaytype>
@@ -1138,6 +1138,17 @@
 </action>
 </actions>
 <relatedlists>
+<relatedlist>
+<function>get_attachments</function>
+<label>Documents</label>
+<sequence>1</sequence>
+<presence>0</presence>
+<actions>
+<action>SELECT</action>
+<action>ADD</action>
+</actions>
+<relatedmodule>Documents</relatedmodule>
+</relatedlist>
 </relatedlists>
 <customlinks>
 </customlinks>

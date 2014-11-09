@@ -445,7 +445,6 @@ class cbEmployee extends CRMEntity {
 	 * @param String Event Type (module.postinstall, module.disabled, module.enabled, module.preuninstall)
 	 */
 	function vtlib_handler($modulename, $event_type) {
-		echo "updating2: $modulename, $event_type";
 		if($event_type == 'module.postinstall') {
 			// TODO Handle post installation actions
 			$this->setModuleSeqNumber('configure', $modulename, $modulename.'-', '0000001');
@@ -459,11 +458,6 @@ class cbEmployee extends CRMEntity {
 			// TODO Handle actions before this module is updated.
 		} else if($event_type == 'module.postupdate') {
 			// TODO Handle actions after this module is updated.
-			global $adb;
-			$adb->query("update vtiger_field set typeofdata='E~O' where fieldid in (813,815)");
-			$module = Vtiger_Module::getInstance($modulename);
-			$moddoc = Vtiger_Module::getInstance('Documents');
-			$module->setRelatedList($moddoc, 'Documents', Array('ADD','SELECT'),'get_attachments'); // get_dependents_list
 		}
 	}
 

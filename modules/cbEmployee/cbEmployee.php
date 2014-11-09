@@ -445,6 +445,7 @@ class cbEmployee extends CRMEntity {
 	 * @param String Event Type (module.postinstall, module.disabled, module.enabled, module.preuninstall)
 	 */
 	function vtlib_handler($modulename, $event_type) {
+		echo "updating2: $modulename, $event_type";
 		if($event_type == 'module.postinstall') {
 			// TODO Handle post installation actions
 			$this->setModuleSeqNumber('configure', $modulename, $modulename.'-', '0000001');

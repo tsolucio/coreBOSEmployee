@@ -10,11 +10,11 @@
 require_once('data/CRMEntity.php');
 require_once('data/Tracker.php');
 
-class Employees extends CRMEntity {
+class cbEmployee extends CRMEntity {
 	var $db, $log; // Used in class functions of CRMEntity
 
-	var $table_name = 'vtiger_employees';
-	var $table_index= 'employeesid';
+	var $table_name = 'vtiger_cbemployee';
+	var $table_index= 'cbemployeeid';
 	var $column_fields = Array();
 
 	/** Indicator if this is a custom module or standard module */
@@ -23,20 +23,20 @@ class Employees extends CRMEntity {
 	/**
 	 * Mandatory table for supporting custom fields.
 	 */
-	var $customFieldTable = Array('vtiger_employeescf', 'employeesid');
+	var $customFieldTable = Array('vtiger_cbemployeecf', 'cbemployeeid');
 
 	/**
 	 * Mandatory for Saving, Include tables related to this module.
 	 */
-	var $tab_name = Array('vtiger_crmentity', 'vtiger_employees', 'vtiger_employeescf');
+	var $tab_name = Array('vtiger_crmentity', 'vtiger_cbemployee', 'vtiger_cbemployeecf');
 
 	/**
 	 * Mandatory for Saving, Include tablename and tablekey columnname here.
 	 */
 	var $tab_name_index = Array(
 		'vtiger_crmentity' => 'crmid',
-		'vtiger_employees'   => 'employeesid',
-	    'vtiger_employeescf' => 'employeesid');
+		'vtiger_cbemployee'   => 'cbemployeeid',
+		'vtiger_cbemployeecf' => 'cbemployeeid');
 
 	/**
 	 * Mandatory for Listing (Related listview)
@@ -44,52 +44,72 @@ class Employees extends CRMEntity {
 	var $list_fields = Array (
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'Matricula'=> Array('employees', 'matricula'),
+		'cbemployeeno'=> Array('cbemployee', 'cbemployeeno'),
+		'nombre'=> Array('cbemployee', 'nombre'),
+		'altaempresa'=> Array('cbemployee', 'altaempresa'),
+		'mobile_phone'=> Array('cbemployee', 'mobile_phone'),
+		'work_phone'=> Array('cbemployee', 'work_phone'),
+		'work_email'=> Array('cbemployee', 'work_email'),
 		'Assigned To' => Array('crmentity','smownerid')
 	);
 	var $list_fields_name = Array(
 		/* Format: Field Label => fieldname */
-		'Matricula'=> 'matricula',
+		'cbemployeeno'=> 'cbemployeeno',
+		'nombre'=> 'nombre',
+		'altaempresa'=> 'altaempresa',
+		'mobile_phone'=> 'mobile_phone',
+		'work_phone'=> 'work_phone',
+		'work_email'=> 'work_email',
 		'Assigned To' => 'assigned_user_id'
 	);
 
 	// Make the field link to detail view from list view (Fieldname)
-	var $list_link_field = 'matricula';
+	var $list_link_field = 'cbemployeeno';
 
 	// For Popup listview and UI type support
 	var $search_fields = Array(
 		/* Format: Field Label => Array(tablename, columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'Matricula'=> Array('payslip', 'matricula')
+		'cbemployeeno'=> Array('cbemployee', 'cbemployeeno'),
+		'nombre'=> Array('cbemployee', 'nombre'),
+		'altaempresa'=> Array('cbemployee', 'altaempresa'),
+		'nss'=> Array('cbemployee', 'nss'),
+		'nif'=> Array('cbemployee', 'nif'),
+		'work_email'=> Array('cbemployee', 'work_email'),
 	);
 	var $search_fields_name = Array(
 		/* Format: Field Label => fieldname */
-		'Matricula'=> 'matricula'
+		'cbemployeeno'=> 'cbemployeeno',
+		'nombre'=> 'nombre',
+		'altaempresa'=> 'altaempresa',
+		'nss'=> 'nss',
+		'nif'=> 'nif',
+		'work_email'=> 'work_email',
 	);
 
 	// For Popup window record selection
-	var $popup_fields = Array('matricula');
+	var $popup_fields = Array('cbemployeeno');
 
 	// Placeholder for sort fields - All the fields will be initialized for Sorting through initSortFields
 	var $sortby_fields = Array();
 
 	// For Alphabetical search
-	var $def_basicsearch_col = 'matricula';
+	var $def_basicsearch_col = 'nombre';
 
 	// Column value to use on detail view record text display
-	var $def_detailview_recname = 'matricula';
+	var $def_detailview_recname = 'nombre';
 
 	// Required Information for enabling Import feature
-	var $required_fields = Array('matricula'=>1);
+	var $required_fields = Array('nombre'=>1);
 
 	// Callback function list during Importing
 	var $special_functions = Array('set_import_assigned_user');
 
-	var $default_order_by = 'matricula';
+	var $default_order_by = 'nombre';
 	var $default_sort_order='ASC';
 	// Used when enabling/disabling the mandatory fields for the module.
 	// Refers to vtiger_field.fieldname values.
-	var $mandatory_fields = Array('createdtime', 'modifiedtime', 'matricula');
+	var $mandatory_fields = Array('nombre');
 	
 	function __construct() {
 		global $log, $currentModule;
@@ -126,7 +146,7 @@ class Employees extends CRMEntity {
 
 	function save_module($module) {
 	  global $adb;
-	  $query = "update vtiger_employees set age=DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(birthdate, '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(birthdate, '00-%m-%d')) where employeesid={$this->id}";
+	  $query = "update vtiger_cbemployee set age=DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(birthdate, '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(birthdate, '00-%m-%d')) where cbemployeeid={$this->id}";
 	  $adb->query($query);
 	}
 

@@ -3,7 +3,7 @@
 <name>cbEmployee</name>
 <label>cbEmployee</label>
 <parent>Settings</parent>
-<version>1.0</version>
+<version>1.1</version>
 <short_description>coreBOS Employee module</short_description>
 <dependencies>
 <vtiger_version>5.4.0</vtiger_version>
@@ -39,7 +39,7 @@
   `nss` varchar(100) default NULL,
   `nif` varchar(100) default NULL,
   `birthplace` varchar(100) default NULL,
-  `birthdate` date default NULL,
+  `birthday` date default NULL,
   `maritalstatus` varchar(100) default NULL,
   `numchildren` int(11) default NULL,
   `inchargeof` int(11) default NULL,
@@ -302,12 +302,12 @@
 <masseditable>1</masseditable>
 </field>
 <field>
-<fieldname>birthdate</fieldname>
+<fieldname>birthday</fieldname>
 <uitype>5</uitype>
-<columnname>birthdate</columnname>
+<columnname>birthday</columnname>
 <tablename>vtiger_cbemployee</tablename>
 <generatedtype>1</generatedtype>
-<fieldlabel>birthdate</fieldlabel>
+<fieldlabel>birthday</fieldlabel>
 <readonly>1</readonly>
 <presence>2</presence>
 <selected>0</selected>

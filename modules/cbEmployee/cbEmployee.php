@@ -146,7 +146,7 @@ class cbEmployee extends CRMEntity {
 
 	function save_module($module) {
 	  global $adb;
-	  $query = "update vtiger_cbemployee set age=DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(birthdate, '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(birthdate, '00-%m-%d')) where cbemployeeid={$this->id}";
+	  $query = "update vtiger_cbemployee set age=DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(birthday, '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(birthday, '00-%m-%d')) where cbemployeeid={$this->id}";
 	  $adb->query($query);
 	}
 
@@ -458,6 +458,8 @@ class cbEmployee extends CRMEntity {
 			// TODO Handle actions before this module is updated.
 		} else if($event_type == 'module.postupdate') {
 			// TODO Handle actions after this module is updated.
+			global $adb;
+			$adb->query('ALTER TABLE vtiger_cbemployee CHANGE `birthdate` `birthday` DATE NULL DEFAULT NULL');
 		}
 	}
 

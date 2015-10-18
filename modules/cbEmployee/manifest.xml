@@ -393,7 +393,7 @@
 <selected>0</selected>
 <sequence>15</sequence>
 <maximumlength>100</maximumlength>
-<typeofdata>T~O</typeofdata>
+<typeofdata>DT~O</typeofdata>
 <quickcreate>3</quickcreate>
 <quickcreatesequence>8</quickcreatesequence>
 <displaytype>2</displaytype>
@@ -413,7 +413,7 @@
 <selected>0</selected>
 <sequence>16</sequence>
 <maximumlength>100</maximumlength>
-<typeofdata>T~O</typeofdata>
+<typeofdata>DT~O</typeofdata>
 <quickcreate>3</quickcreate>
 <quickcreatesequence>9</quickcreatesequence>
 <displaytype>2</displaytype>

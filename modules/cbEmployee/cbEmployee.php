@@ -112,12 +112,13 @@ class cbEmployee extends CRMEntity {
 	var $mandatory_fields = Array('nombre');
 	
 	function __construct() {
-		global $log, $currentModule;
-		$this->column_fields = getColumnFields($currentModule);
+		global $log;
+		$this_module = get_class($this);
+		$this->column_fields = getColumnFields($this_module);
 		$this->db = PearDatabase::getInstance();
 		$this->log = $log;
 		$sql = 'SELECT 1 FROM vtiger_field WHERE uitype=69 and tabid = ?';
-		$tabid = getTabid($currentModule);
+		$tabid = getTabid($this_module);
 		$result = $this->db->pquery($sql, array($tabid));
 		if ($result and $this->db->num_rows($result)==1) {
 			$this->HasDirectImageField = true;
@@ -125,9 +126,12 @@ class cbEmployee extends CRMEntity {
 	}
 
 	function save_module($module) {
-	  global $adb;
-	  $query = "update vtiger_cbemployee set age=DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(birthday, '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(birthday, '00-%m-%d')) where cbemployeeid={$this->id}";
-	  $adb->query($query);
+		global $adb;
+		$query = "update vtiger_cbemployee set age=DATE_FORMAT(NOW(), '%Y') - DATE_FORMAT(birthday, '%Y') - (DATE_FORMAT(NOW(), '00-%m-%d') < DATE_FORMAT(birthday, '00-%m-%d')) where cbemployeeid={$this->id}";
+		$adb->query($query);
+		if ($this->HasDirectImageField) {
+			$this->insertIntoAttachment($this->id,$module);
+		}
 	}
 
 	/**

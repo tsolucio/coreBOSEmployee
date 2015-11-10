@@ -72,7 +72,7 @@ class cbEmployee extends CRMEntity {
 		// tablename should not have prefix 'vtiger_'
 		'cbemployeeno'=> Array('cbemployee'=> 'cbemployeeno'),
 		'nombre'      => Array('cbemployee'=> 'nombre'),
-		'altaempresa  => Array('cbemployee'=> 'altaempresa'),
+		'altaempresa'  => Array('cbemployee'=> 'altaempresa'),
 		'nss'         => Array('cbemployee'=> 'nss'),
 		'nif'         => Array('cbemployee'=> 'nif'),
 		'work_email'  => Array('cbemployee'=> 'work_email'),

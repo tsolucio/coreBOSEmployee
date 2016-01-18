@@ -2,7 +2,7 @@
 <module>
 <name>cbEmployee</name>
 <label>cbEmployee</label>
-<parent>Settings</parent>
+<parent>Tools</parent>
 <version>1.1</version>
 <short_description>coreBOS Employee module</short_description>
 <dependencies>

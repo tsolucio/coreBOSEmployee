@@ -112,10 +112,6 @@
 <info_type>BAS</info_type>
 <helpinfo><![CDATA[]]></helpinfo>
 <masseditable>1</masseditable>
-<entityidentifier>
-<entityidfield>cbemployeeid</entityidfield>
-<entityidcolumn>cbemployeeid</entityidcolumn>
-</entityidentifier>
 </field>
 <field>
 <fieldname>nss</fieldname>

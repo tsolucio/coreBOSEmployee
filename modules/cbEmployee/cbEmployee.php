@@ -64,7 +64,7 @@ class cbEmployee extends CRMEntity {
 	);
 
 	// Make the field link to detail view from list view (Fieldname)
-	var $list_link_field = 'cbemployeeno';
+	var $list_link_field = 'nombre';
 
 	// For Popup listview and UI type support
 	var $search_fields = Array(
@@ -88,7 +88,7 @@ class cbEmployee extends CRMEntity {
 	);
 
 	// For Popup window record selection
-	var $popup_fields = Array('cbemployeeno');
+	var $popup_fields = Array('nombre');
 
 	// Placeholder for sort fields - All the fields will be initialized for Sorting through initSortFields
 	var $sortby_fields = Array();

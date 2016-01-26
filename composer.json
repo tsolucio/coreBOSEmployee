@@ -1,4 +1,29 @@
 {
-  "name": "tsolucio/coreBOSEmployee",
-  "type": "corebos-module"
+	"name": "tsolucio/coreBOSEmployee",
+	"type": "corebos-module",
+	"properties": {
+		"name": "tsolucio/coreBOSEmployee",
+		"description": "Employee module for coreBOS",
+		"keywords": ["employee","user"],
+		"homepage": "http://corebos.org/documentation/doku.php?id=en:extensions:extensions:corebosemployee",
+		"version": "1.1",
+		"time": "2014-12-12",
+		"license": "Vizsage",
+		"extra": {
+			"price": "0",
+			"distribution": "Free"
+		},
+		"authors": [
+					{
+					"name": "JPL TSolucio, S.L.",
+					"email": "info(at)tsolucio(dot)com"
+					}
+		],
+		"support": {
+				"email": "info(at)tsolucio(dot)com",
+				"issues": "https://github.com/tsolucio/coreBOSEmployee",
+				"forum": "http://discussions.corebos.org/",
+				"source": "https://github.com/tsolucio/coreBOSEmployee"
+		}
+	}
 }

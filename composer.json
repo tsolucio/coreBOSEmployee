@@ -2,7 +2,7 @@
 	"name": "tsolucio/coreBOSEmployee",
 	"type": "corebos-module",
 	"properties": {
-		"name": "tsolucio/coreBOSEmployee",
+		"name": "coreBOS Employee",
 		"description": "Employee module for coreBOS",
 		"keywords": ["employee","user"],
 		"homepage": "http://corebos.org/documentation/doku.php?id=en:extensions:extensions:corebosemployee",

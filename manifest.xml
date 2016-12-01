@@ -33,7 +33,7 @@
 <table>
 <name>vtiger_cbemployee</name>
 <sql><![CDATA[CREATE TABLE `vtiger_cbemployee` (
-  `cbemployeeid` int(11) default NULL,
+  `cbemployeeid` int(11) NOT NULL,
   `cbemployeeno` varchar(50) DEFAULT NULL,
   `nombre` varchar(150) default NULL,
   `nss` varchar(100) default NULL,

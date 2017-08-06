@@ -111,7 +111,7 @@
 <displaytype>1</displaytype>
 <info_type>BAS</info_type>
 <helpinfo><![CDATA[]]></helpinfo>
-<masseditable>1</masseditable>
+<masseditable>0</masseditable>
 </field>
 <field>
 <fieldname>nss</fieldname>
@@ -378,6 +378,26 @@
 <masseditable>1</masseditable>
 </field>
 <field>
+<fieldname>created_user_id</fieldname>
+<uitype>52</uitype>
+<columnname>smcreatorid</columnname>
+<tablename>vtiger_crmentity</tablename>
+<generatedtype>1</generatedtype>
+<fieldlabel>Created By</fieldlabel>
+<readonly>1</readonly>
+<presence>0</presence>
+<selected>0</selected>
+<sequence>15</sequence>
+<maximumlength>100</maximumlength>
+<typeofdata>V~O</typeofdata>
+<quickcreate>3</quickcreate>
+<quickcreatesequence>1</quickcreatesequence>
+<displaytype>2</displaytype>
+<info_type>BAS</info_type>
+<helpinfo><![CDATA[]]></helpinfo>
+<masseditable>0</masseditable>
+</field>
+<field>
 <fieldname>createdtime</fieldname>
 <uitype>70</uitype>
 <columnname>createdtime</columnname>
@@ -387,7 +407,7 @@
 <readonly>1</readonly>
 <presence>0</presence>
 <selected>0</selected>
-<sequence>15</sequence>
+<sequence>16</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>DT~O</typeofdata>
 <quickcreate>3</quickcreate>
@@ -407,7 +427,7 @@
 <readonly>1</readonly>
 <presence>0</presence>
 <selected>0</selected>
-<sequence>16</sequence>
+<sequence>17</sequence>
 <maximumlength>100</maximumlength>
 <typeofdata>DT~O</typeofdata>
 <quickcreate>3</quickcreate>
@@ -1066,7 +1086,7 @@
 <columnname>description</columnname>
 <tablename>vtiger_crmentity</tablename>
 <generatedtype>1</generatedtype>
-<fieldlabel>description</fieldlabel>
+<fieldlabel>Description</fieldlabel>
 <readonly>1</readonly>
 <presence>2</presence>
 <selected>0</selected>
@@ -1146,6 +1166,8 @@
 <relatedmodule>Documents</relatedmodule>
 </relatedlist>
 </relatedlists>
+<events>
+</events>
 <customlinks>
 </customlinks>
 <crons>

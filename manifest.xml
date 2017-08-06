@@ -258,8 +258,8 @@
 <masseditable>1</masseditable>
 </field>
 <field>
-<fieldname>userid</fieldname>
-<uitype>52</uitype>
+<fieldname>reports_to_id</fieldname>
+<uitype>101</uitype>
 <columnname>userid</columnname>
 <tablename>vtiger_cbemployee</tablename>
 <generatedtype>1</generatedtype>

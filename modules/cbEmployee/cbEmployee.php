@@ -11,48 +11,50 @@ require_once('data/CRMEntity.php');
 require_once('data/Tracker.php');
 
 class cbEmployee extends CRMEntity {
-	var $db, $log; // Used in class functions of CRMEntity
+	public $db;
+	public $log;
 
-	var $table_name = 'vtiger_cbemployee';
-	var $table_index= 'cbemployeeid';
-	var $column_fields = Array();
+	public $table_name = 'vtiger_cbemployee';
+	public $table_index= 'cbemployeeid';
+	public $column_fields = array();
 
 	/** Indicator if this is a custom module or standard module */
-	var $IsCustomModule = true;
-	var $HasDirectImageField = false;
+	public $IsCustomModule = true;
+	public $HasDirectImageField = false;
 	/**
 	 * Mandatory table for supporting custom fields.
 	 */
-	var $customFieldTable = Array('vtiger_cbemployeecf', 'cbemployeeid');
+	public $customFieldTable = array('vtiger_cbemployeecf', 'cbemployeeid');
 
 	/**
 	 * Mandatory for Saving, Include tables related to this module.
 	 */
-	var $tab_name = Array('vtiger_crmentity', 'vtiger_cbemployee', 'vtiger_cbemployeecf');
+	public $tab_name = array('vtiger_crmentity', 'vtiger_cbemployee', 'vtiger_cbemployeecf');
 
 	/**
 	 * Mandatory for Saving, Include tablename and tablekey columnname here.
 	 */
-	var $tab_name_index = Array(
-		'vtiger_crmentity'    => 'crmid',
+	public $tab_name_index = array(
+		'vtiger_crmentity' => 'crmid',
 		'vtiger_cbemployee'   => 'cbemployeeid',
-		'vtiger_cbemployeecf' => 'cbemployeeid');
+		'vtiger_cbemployeecf' => 'cbemployeeid',
+	);
 
 	/**
 	 * Mandatory for Listing (Related listview)
 	 */
-	var $list_fields = Array (
+	public $list_fields = array (
 		/* Format: Field Label => Array(tablename => columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'cbemployeeno'=> Array('cbemployee'=> 'cbemployeeno'),
-		'nombre'      => Array('cbemployee'=> 'nombre'),
-		'altaempresa' => Array('cbemployee'=> 'altaempresa'),
-		'mobile_phone'=> Array('cbemployee'=> 'mobile_phone'),
-		'work_phone'  => Array('cbemployee'=> 'work_phone'),
-		'work_email'  => Array('cbemployee'=> 'work_email'),
-		'Assigned To' => Array('crmentity' =>'smownerid')
+		'cbemployeeno'=> array('cbemployee'=> 'cbemployeeno'),
+		'nombre'      => array('cbemployee'=> 'nombre'),
+		'altaempresa' => array('cbemployee'=> 'altaempresa'),
+		'mobile_phone'=> array('cbemployee'=> 'mobile_phone'),
+		'work_phone'  => array('cbemployee'=> 'work_phone'),
+		'work_email'  => array('cbemployee'=> 'work_email'),
+		'Assigned To' => array('crmentity' =>'smownerid')
 	);
-	var $list_fields_name = Array(
+	public $list_fields_name = array(
 		/* Format: Field Label => fieldname */
 		'cbemployeeno'=> 'cbemployeeno',
 		'nombre'      => 'nombre',
@@ -64,20 +66,20 @@ class cbEmployee extends CRMEntity {
 	);
 
 	// Make the field link to detail view from list view (Fieldname)
-	var $list_link_field = 'nombre';
+	public $list_link_field = 'nombre';
 
 	// For Popup listview and UI type support
-	var $search_fields = Array(
+	public $search_fields = array(
 		/* Format: Field Label => Array(tablename => columnname) */
 		// tablename should not have prefix 'vtiger_'
-		'cbemployeeno'=> Array('cbemployee'=> 'cbemployeeno'),
-		'nombre'      => Array('cbemployee'=> 'nombre'),
-		'altaempresa'  => Array('cbemployee'=> 'altaempresa'),
-		'nss'         => Array('cbemployee'=> 'nss'),
-		'nif'         => Array('cbemployee'=> 'nif'),
-		'work_email'  => Array('cbemployee'=> 'work_email'),
+		'cbemployeeno'=> array('cbemployee'=> 'cbemployeeno'),
+		'nombre'      => array('cbemployee'=> 'nombre'),
+		'altaempresa'  => array('cbemployee'=> 'altaempresa'),
+		'nss'         => array('cbemployee'=> 'nss'),
+		'nif'         => array('cbemployee'=> 'nif'),
+		'work_email'  => array('cbemployee'=> 'work_email'),
 	);
-	var $search_fields_name = Array(
+	public $search_fields_name = array(
 		/* Format: Field Label => fieldname */
 		'cbemployeeno'=> 'cbemployeeno',
 		'nombre'      => 'nombre',
@@ -88,28 +90,28 @@ class cbEmployee extends CRMEntity {
 	);
 
 	// For Popup window record selection
-	var $popup_fields = Array('nombre');
+	public $popup_fields = array('nombre');
 
 	// Placeholder for sort fields - All the fields will be initialized for Sorting through initSortFields
-	var $sortby_fields = Array();
+	public $sortby_fields = array();
 
 	// For Alphabetical search
-	var $def_basicsearch_col = 'nombre';
+	public $def_basicsearch_col = 'nombre';
 
 	// Column value to use on detail view record text display
-	var $def_detailview_recname = 'nombre';
+	public $def_detailview_recname = 'nombre';
 
 	// Required Information for enabling Import feature
-	var $required_fields = Array('nombre'=>1);
+	public $required_fields = array('nombre'=>1);
 
 	// Callback function list during Importing
-	var $special_functions = Array('set_import_assigned_user');
+	public $special_functions = array('set_import_assigned_user');
 
-	var $default_order_by = 'nombre';
-	var $default_sort_order='ASC';
+	public $default_order_by = 'nombre';
+	public $default_sort_order='ASC';
 	// Used when enabling/disabling the mandatory fields for the module.
 	// Refers to vtiger_field.fieldname values.
-	var $mandatory_fields = Array('nombre');
+	public $mandatory_fields = array('nombre');
 
 	function save_module($module) {
 		global $adb;
@@ -125,19 +127,19 @@ class cbEmployee extends CRMEntity {
 	 * @param String Module name
 	 * @param String Event Type (module.postinstall, module.disabled, module.enabled, module.preuninstall)
 	 */
-	function vtlib_handler($modulename, $event_type) {
-		if($event_type == 'module.postinstall') {
+	public function vtlib_handler($modulename, $event_type) {
+		if ($event_type == 'module.postinstall') {
 			// TODO Handle post installation actions
 			$this->setModuleSeqNumber('configure', $modulename, $modulename.'-', '0000001');
-		} else if($event_type == 'module.disabled') {
+		} elseif ($event_type == 'module.disabled') {
 			// TODO Handle actions when this module is disabled.
-		} else if($event_type == 'module.enabled') {
+		} elseif ($event_type == 'module.enabled') {
 			// TODO Handle actions when this module is enabled.
-		} else if($event_type == 'module.preuninstall') {
+		} elseif ($event_type == 'module.preuninstall') {
 			// TODO Handle actions when this module is about to be deleted.
-		} else if($event_type == 'module.preupdate') {
+		} elseif ($event_type == 'module.preupdate') {
 			// TODO Handle actions before this module is updated.
-		} else if($event_type == 'module.postupdate') {
+		} elseif ($event_type == 'module.postupdate') {
 			// TODO Handle actions after this module is updated.
 			global $adb;
 			$adb->query('ALTER TABLE vtiger_cbemployee CHANGE `birthdate` `birthday` DATE NULL DEFAULT NULL');
@@ -149,27 +151,27 @@ class cbEmployee extends CRMEntity {
 	 * NOTE: This function has been added to CRMEntity (base class).
 	 * You can override the behavior by re-defining it here.
 	 */
-	// function save_related_module($module, $crmid, $with_module, $with_crmid) { }
+	// public function save_related_module($module, $crmid, $with_module, $with_crmid) { }
 
 	/**
 	 * Handle deleting related module information.
 	 * NOTE: This function has been added to CRMEntity (base class).
 	 * You can override the behavior by re-defining it here.
 	 */
-	//function delete_related_module($module, $crmid, $with_module, $with_crmid) { }
+	//public function delete_related_module($module, $crmid, $with_module, $with_crmid) { }
 
 	/**
 	 * Handle getting related list information.
 	 * NOTE: This function has been added to CRMEntity (base class).
 	 * You can override the behavior by re-defining it here.
 	 */
-	//function get_related_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
+	//public function get_related_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
 
 	/**
 	 * Handle getting dependents list information.
 	 * NOTE: This function has been added to CRMEntity (base class).
 	 * You can override the behavior by re-defining it here.
 	 */
-	//function get_dependents_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
+	//public function get_dependents_list($id, $cur_tab_id, $rel_tab_id, $actions=false) { }
 }
 ?>

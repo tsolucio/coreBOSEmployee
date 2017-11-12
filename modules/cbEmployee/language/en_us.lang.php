@@ -8,7 +8,7 @@
  * All Rights Reserved.
  ************************************************************************************/
 
-$mod_strings = Array(
+$mod_strings = array(
 	'cbEmployee' => 'Employees',
 	'SINGLE_cbEmployee' => 'Employee',
 	'cbEmployee ID' => 'Employee ID',

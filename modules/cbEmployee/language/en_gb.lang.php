@@ -66,5 +66,4 @@ $mod_strings = array(
 	'p_g_gpa' => 'Postgraduate Degree School GPA',
 	'p_g_comments' => 'Postgraduate Comments',
 );
-
 ?>

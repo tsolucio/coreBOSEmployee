@@ -66,5 +66,4 @@ $mod_strings = array(
 	'p_g_gpa' => 'Nota Escuela Postgrado',
 	'p_g_comments' => 'Comentarios Postgrado',
 );
-
 ?>

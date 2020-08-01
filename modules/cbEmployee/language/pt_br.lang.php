@@ -65,5 +65,15 @@ $mod_strings = array(
 	'p_g_graduation_year' => 'Pós graduado no ano',
 	'p_g_gpa' => 'Pós graduação - nota MEC',
 	'p_g_comments' => 'Pós graduação comentários',
+	'portal'=>'Portal Access',
+	'LBL_EMPLOYEE_PORTAL_INFORMATION'=>'Employee Portal Information',
+	'support_start_date'=>'Access Start Date',
+	'support_end_date'=>'Access End Date',
+	'template_language' => 'Portal Language',
+	'portalpasswordtype' => 'Password Encoding',
+	'portalloginuser' => 'Portal Login User',
+	'PortalUserPasswordManagement' => 'Portal Password',
+	'ppset' => 'Set Password',
+	'ppnotset' => 'Password not defined',
 );
 ?>

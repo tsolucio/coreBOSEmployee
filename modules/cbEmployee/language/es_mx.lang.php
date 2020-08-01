@@ -65,5 +65,15 @@ $mod_strings = array(
 	'p_g_graduation_year' => 'Año Graduación Escuela Postgrado',
 	'p_g_gpa' => 'Nota Escuela Postgrado',
 	'p_g_comments' => 'Comentarios Postgrado',
+	'portal'=>'Acceso Portal',
+	'LBL_EMPLOYEE_PORTAL_INFORMATION'=>'Información Portal Empleado',
+	'support_start_date'=>'Finalización Acceso',
+	'support_end_date'=>'Inicio Acceso',
+	'template_language' => 'Idioma Portal',
+	'portalpasswordtype' => 'Codificación Contraseña',
+	'portalloginuser' => 'Usuario del Portal',
+	'PortalUserPasswordManagement' => 'Contraseña Portal',
+	'ppset' => 'Establecer Contraseña',
+	'ppnotset' => 'Contraseña no definida',
 );
 ?>

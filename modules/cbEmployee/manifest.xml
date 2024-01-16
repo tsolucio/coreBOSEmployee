@@ -1166,14 +1166,14 @@
 <relatedmodule>Documents</relatedmodule>
 </relatedlist>
 <relatedlist>
-<function>get_emais</function>
+<function>get_emails</function>
 <label>Emails</label>
 <sequence>2</sequence>
 <presence>0</presence>
 <actions>
 <action>ADD</action>
 </actions>
-<relatedmodule>Documents</relatedmodule>
+<relatedmodule>Emails</relatedmodule>
 </relatedlist>
 </relatedlists>
 <events>

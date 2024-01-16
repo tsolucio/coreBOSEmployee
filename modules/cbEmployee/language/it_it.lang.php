@@ -74,10 +74,5 @@ $mod_strings = array(
 	'PortalUserPasswordManagement' => 'Password del portale',
 	'ppset' => 'Impostare la password',
 	'ppnotset' => 'Password non definita',
-	'Assigned To' => 'Assegnato a ',
-	'Created By' => 'Creato da',
-	'Created Time' => 'Orario creazione',
-	'Modified Time' => 'Orario modifica',
-	'Description' => 'Descrizione',
 );
 ?>
